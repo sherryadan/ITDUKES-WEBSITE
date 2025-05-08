@@ -1,12 +1,12 @@
-import HomePage from "./components/HomePage";
-import { NavBar } from "./components/NavBar";
+import MainPage from "./components/MainPage";
+import { HomePage } from "./components/HomePage";
 
 export default function Home() {
   return (
     <div>
+      <MainPage/>
+      <div className=" mt-6">
       <HomePage/>
-      <div className=" mx-20 mt-6">
-      <NavBar/>
       </div>
       </div>
   );
