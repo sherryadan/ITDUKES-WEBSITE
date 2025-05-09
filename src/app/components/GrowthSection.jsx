@@ -2,7 +2,7 @@ import React from 'react'
 
 const GrowthSection = () => {
   return (
-     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-24">
+     <div className="flex items-center justify-between px-4 py-2 ">
           <div>
             <p className="text-orange-500 font-bold text-sm mb-2">
               COMMON IDEA
