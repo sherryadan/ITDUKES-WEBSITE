@@ -1,4 +1,21 @@
 import React from 'react'
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (

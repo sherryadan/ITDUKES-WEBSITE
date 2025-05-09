@@ -20,7 +20,6 @@ import {
 } from "react-icons/fa";
 
 export function HomePage() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
     <div className="relative w-full">
@@ -36,24 +35,3 @@ export function HomePage() {
   );
 }
 
-const ListItem = React.forwardRef(
-  ({ className, title, children, ...props }, ref) => {
-    return (
-      <li className="w-full">
-        <NavigationMenuLink asChild>
-          <Link
-            ref={ref}
-            className={cn(
-              "block w-full px-4 py-3 text-sm text-center text-gray-800 hover:bg-orange-600 hover:text-white transition-colors duration-200",
-              className
-            )}
-            {...props}
-          >
-            <span className="break-words leading-snug">{children}</span>
-          </Link>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ListItem.displayName = "ListItem";

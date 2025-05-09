@@ -1,6 +1,22 @@
+"use client"
 import React from 'react'
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+
 
 const Navbar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
   return (
     <div>
       <div className="flex items-center justify-between px-4 py-2 md:hidden">
@@ -131,6 +147,28 @@ const Navbar = () => {
     
   )
 }
+const ListItem = React.forwardRef(
+  ({ className, title, children, ...props }, ref) => {
+    return (
+      <li className="w-full">
+        <NavigationMenuLink asChild>
+          <Link
+            ref={ref}
+            className={cn(
+              "block w-full px-4 py-3 text-sm text-center text-gray-800 hover:bg-orange-600 hover:text-white transition-colors duration-200",
+              className
+            )}
+            {...props}
+          >
+            <span className="break-words leading-snug">{children}</span>
+          </Link>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
+);
+ListItem.displayName = "ListItem";
+
 
 
 
