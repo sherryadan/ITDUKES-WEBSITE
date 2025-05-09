@@ -14,10 +14,10 @@ export default function Home() {
       <MainPage/>
       <div className=" mt-6">
       <Navbar/>
-      <GrowthSection/>
       <HeroSection/>
-      <PartnerSection/>
       <ServiceCard/>
+      <PartnerSection/>
+      <GrowthSection/>
       <StatsCard/>
       <Testimonials/>
       <Footer/>
