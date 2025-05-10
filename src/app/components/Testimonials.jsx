@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 
 const TestimonialCard = ({ name, image, text, bgColor = 'bg-blue-50' }) => {

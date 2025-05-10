@@ -1,5 +1,16 @@
 import React from 'react';
 
+const Badge = ({ number, label, position }) => {
+  return (
+    <div className={`absolute ${position} bg-white rounded-full shadow-lg px-4 py-2 flex items-center`}>
+      <div>
+        <p className="text-sm font-bold">{number}</p>
+        <p className="text-xs text-gray-500">{label}</p>
+      </div>
+    </div>
+  );
+};
+
 const GrowthSection = ({
   subtitle = 'COMMON IDEA',
   title = 'A Hub for Growth and Innovation',
@@ -12,8 +23,18 @@ Ready to take the next step? Let’s build your success story together. Reach ou
   imageAlt = 'IT Dukes Illustration',
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between px-4 py-2">
-      <div className="md:w-1/2">
+    <section className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="relative">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          className="w-full max-w-md mx-auto md:mx-0"
+        />
+        <Badge number="700+" label="Projects Done" position="top-2 left-2" />
+        <Badge number="300+" label="Happy Clients" position="bottom-5 right-5" />
+      </div>
+
+      <div>
         <p className="text-orange-500 font-bold text-sm mb-2">{subtitle}</p>
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-gray-800 leading-snug">
           {title}
@@ -28,14 +49,7 @@ Ready to take the next step? Let’s build your success story together. Reach ou
           {buttonLabel}
         </button>
       </div>
-      <div className="relative md:w-1/2 mt-6 md:mt-0">
-        <img
-          src={imageSrc}
-          alt={imageAlt}
-          className="w-full max-w-md mx-auto md:mx-0"
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 

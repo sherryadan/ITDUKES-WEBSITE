@@ -1,5 +1,16 @@
 import React from 'react';
 
+const Badge = ({ number, label, position }) => {
+  return (
+    <div className={`absolute ${position} bg-white rounded-full shadow-lg px-4 py-2 flex items-center`}>
+      <div>
+        <p className="text-sm font-bold">{number}</p>
+        <p className="text-xs text-gray-500">{label}</p>
+      </div>
+    </div>
+  );
+};
+
 const HeroSection = ({
   badge = '★ MICROSOFT 365 SOLUTIONS',
   headline = 'Enhance Productivity with Microsoft 365',
@@ -12,9 +23,9 @@ const HeroSection = ({
   features = [],
 }) => {
   return (
-    <section className="bg-[#fff5f2] py-16 px-4 md:px-12 lg:px-20 flex flex-col lg:flex-col gap-10 rounded-4xl">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 px-4 py-12">
-        <div className="max-w-xl">
+    <section className="bg-[#fff5f2] py-16 px-4 md:px-12 lg:px-20 flex flex-col justify-center items-center gap-10 rounded-4xl">
+      <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 px-4 py-12 max-w-screen-xl">
+        <div className="max-w-xl text-center md:text-left">
           <p className="text-sm font-semibold text-orange-600 tracking-wide mb-2">
             {badge}
           </p>
@@ -35,8 +46,11 @@ const HeroSection = ({
           </button>
         </div>
 
-        <div className="max-w-md w-full">
+        <div className="relative max-w-md w-full">
           <img src={heroImage.src} alt={heroImage.alt} className="w-full" />
+          {/* Badge on image for "150,000+ Users" */}
+          <Badge number="150,000+" label="Users" position="top-2 left-2" />
+          <Badge number="24/7" label="Support" position="bottom-5 right-5" />
         </div>
       </div>
 
