@@ -5,7 +5,6 @@ import {
   FaLinkedinIn,
 } from 'react-icons/fa';
 
-// Reusable Link Section
 const LinkSection = ({ title, links }) => (
   <div>
     <h4 className="text-lg font-bold mb-4">{title}</h4>
@@ -19,7 +18,6 @@ const LinkSection = ({ title, links }) => (
   </div>
 );
 
-// Reusable Contact Info Section
 const ContactSection = ({ contacts, socialLinks }) => (
   <div>
     <h4 className="text-lg font-semibold mb-4">Contact Info</h4>

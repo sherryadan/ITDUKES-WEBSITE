@@ -48,7 +48,6 @@ const HeroSection = ({
 
         <div className="relative max-w-md w-full">
           <img src={heroImage.src} alt={heroImage.alt} className="w-full" />
-          {/* Badge on image for "150,000+ Users" */}
           <Badge number="150,000+" label="Users" position="top-2 left-2" />
           <Badge number="24/7" label="Support" position="bottom-5 right-5" />
         </div>

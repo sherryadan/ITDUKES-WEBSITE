@@ -10,18 +10,32 @@ import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
-    <div>
-      <MainPage/>
+    <div className="mt-7">
+      <MainPage />
       <div className=" mt-6">
-      <Navbar/>
-      <HeroSection/>
-      <ServiceCard/>
-      <PartnerSection/>
-      <GrowthSection/>
-      <StatsCard/>
-      <Testimonials/>
-      <Footer/>
+        <Navbar />
+        <div className="mt-6">
+          <HeroSection />
+        </div>
+        <div className="mt-6">
+          <ServiceCard />
+        </div>
+        <div className="mt-6">
+          <GrowthSection />
+        </div>
+        <div className="mt-6">
+          <PartnerSection />
+        </div>
+        <div className="mt-6">
+          <StatsCard />
+        </div>
+        <div className="mt-6">
+          <Testimonials />
+        </div>
+        <div className="mt-6">
+          <Footer />
+        </div>
       </div>
-      </div>
+    </div>
   );
 }

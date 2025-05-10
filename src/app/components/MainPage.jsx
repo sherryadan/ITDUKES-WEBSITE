@@ -1,26 +1,27 @@
-import React from 'react';
-import { IoMdContact } from 'react-icons/io';
-import { FaPhoneSquare, FaFacebookSquare, FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
+import React from 'react'
+import { IoMdContact } from "react-icons/io";
+import { FaPhoneSquare, FaFacebookSquare, FaInstagramSquare , FaLinkedin } from "react-icons/fa";
 
-const MainPage = ({ contactItems = [], socialLinks = [] }) => {
+const MainPage = () => {
   return (
     <div className="w-full text-black mt-5 px-5">
       <div className="flex justify-between items-center">
+        
         <div className="flex items-center gap-4">
-          {contactItems.map((item, idx) => (
-            <div key={idx} className="flex items-center">
-              <item.icon className="text-xl" />
-              <p className="text-sm ml-2">{item.label}</p>
-            </div>
-          ))}
+          <div className="flex items-center">
+            <IoMdContact className="text-xl" />
+            <p className="text-sm ml-2">Suite Sign In</p>
+          </div>
+          <div className="flex items-center">
+            <FaPhoneSquare className="text-xl ml-2" />
+            <p className="text-sm ml-2">(800) 123-4567</p>
+          </div>
         </div>
 
         <div className="flex items-center gap-9">
-          {socialLinks.map((social, idx) => (
-            <a key={idx} href={social.href} target="_blank" rel="noopener noreferrer">
-              <social.icon className="text-xl hover:text-orange-600 transition" />
-            </a>
-          ))}
+          <FaFacebookSquare className="text-xl" />
+          <FaInstagramSquare className="text-xl" />
+          <FaLinkedin className="text-xl" />
         </div>
       </div>
     </div>
