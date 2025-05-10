@@ -1,7 +1,6 @@
 import React from 'react'
 import { IoMdContact } from "react-icons/io";
 import { FaPhoneSquare, FaFacebookSquare, FaInstagramSquare , FaLinkedin } from "react-icons/fa";
-
 const MainPage = () => {
   return (
     <div className="w-full text-black mt-5 px-5">
