@@ -54,7 +54,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div>
+  <div className="sticky top-0 z-50 bg-white shadow h-12 md:h-20">
       <div className="flex items-center justify-between px-4 py-2 md:hidden">
         <img src="/logo.png" alt="IT Dukes Logo" className="w-32" />
         <button
