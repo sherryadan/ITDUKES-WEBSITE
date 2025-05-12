@@ -7,6 +7,7 @@ import PartnerSection from "./components/PartnerSection";
 import ServiceCard from "./components/ServiceCard";
 import StatsCard from "./components/StatsCard";
 import Testimonials from "./components/Testimonials";
+import Feature from "./components/Feature";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <MainPage />
       <div className=" mt-6">
         <Navbar />
-        <div className="mt-6">
+        <div>
           <HeroSection />
         </div>
         <div className="mt-6">

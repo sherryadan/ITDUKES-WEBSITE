@@ -1,26 +1,71 @@
-import React from 'react';
+"use client";
 
-const Badge = ({ number, label, position }) => {
-  return (
-    <div className={`absolute ${position} bg-white rounded-full shadow-lg px-4 py-2 flex items-center`}>
-      <div>
-        <p className="text-sm font-bold">{number}</p>
-        <p className="text-xs text-gray-500">{label}</p>
-      </div>
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+const Badge = ({ number, label, position }) => (
+  <div
+    className={`absolute ${position} bg-white rounded-full shadow-lg px-4 py-2 flex items-center`}
+  >
+    <div>
+      <p className="text-sm font-bold">{number}</p>
+      <p className="text-xs text-gray-500">{label}</p>
     </div>
-  );
-};
+  </div>
+);
+
+const defaultFeatures = [
+  {
+    title: "Digital Experience Platforms",
+    description:
+      "Our data-driven strategies maximize ROI and are tailored to your business goals and audience.",
+    icon: "/s1.png",
+  },
+  {
+    title: "Web Design and Development",
+    description:
+      "Our website development services provide custom, responsive, and SEO-friendly designs that align with your goals.",
+    icon: "/s2.png",
+  },
+  {
+    title: "Cloud Setup and Management",
+    description:
+      "IT Dukes offers seamless cloud setup, migration, and management services for platforms like Google Workspace.",
+    icon: "/s3.png",
+  },
+    {
+    title: "Digital Experience Platforms",
+    description:
+      "Our data-driven strategies maximize ROI and are tailored to your business goals and audience.",
+    icon: "/s1.png",
+  },
+  {
+    title: "Web Design and Development",
+    description:
+      "Our website development services provide custom, responsive, and SEO-friendly designs that align with your goals.",
+    icon: "/s2.png",
+  },
+  {
+    title: "Cloud Setup and Management",
+    description:
+      "IT Dukes offers seamless cloud setup, migration, and management services for platforms like Google Workspace.",
+    icon: "/s3.png",
+  },
+];
 
 const HeroSection = ({
-  badge = '★ MICROSOFT 365 SOLUTIONS',
-  headline = 'Enhance Productivity with Microsoft 365',
-  description = 'Empower your workforce with industry-leading tools like Teams, Outlook, and OneDrive. IT Dukes provides seamless setup, migration, and 24/7 support to drive efficiency and growth.',
-  highlightText = '150,000+ Users',
-  highlightLabel = 'All over the world',
-  buttonLabel = 'GET STARTED TODAY',
+  badge = "★ MICROSOFT 365 SOLUTIONS",
+  headline = "Enhance Productivity with Microsoft 365",
+  description = "Empower your workforce with industry-leading tools like Teams, Outlook, and OneDrive. IT Dukes provides seamless setup, migration, and 24/7 support to drive efficiency and growth.",
+  highlightText = "150,000+ Users",
+  highlightLabel = "All over the world",
+  buttonLabel = "GET STARTED TODAY",
   onButtonClick,
-  heroImage = { src: '/Microsoft-365-Wheel.png', alt: 'Microsoft 365 Wheel' },
-  features = [],
+  heroImage = { src: "/Microsoft-365-Wheel.png", alt: "Microsoft 365 Wheel" },
+  features = defaultFeatures,
 }) => {
   return (
     <section className="bg-[#fff5f2] py-16 px-4 md:px-12 lg:px-20 flex flex-col justify-center items-center gap-10 rounded-4xl">
@@ -34,8 +79,8 @@ const HeroSection = ({
           </h1>
           <p className="text-gray-700 text-lg mb-6">{description}</p>
           <p className="text-lg font-semibold text-gray-800 mb-6">
-            Over{' '}
-            <span className="text-orange-600 font-bold">{highlightText}</span>{' '}
+            Over{" "}
+            <span className="text-orange-600 font-bold">{highlightText}</span>{" "}
             {highlightLabel}
           </p>
           <button
@@ -52,26 +97,37 @@ const HeroSection = ({
           <Badge number="24/7" label="Support" position="bottom-5 right-5" />
         </div>
       </div>
-
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl shadow-sm p-6 text-center hover:shadow-md transition"
-            >
-              <img
-                src={feature.icon}
-                alt={feature.alt}
-                className="mx-auto mb-4 w-12 h-12"
-              />
-              <h3 className="text-xl font-semibold mb-2 cursor-pointer hover:text-orange-600">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </div>
+      <div className="w-full px-4 md:px-8 lg:px-12 max-w-6xl mx-auto mt-10">
+        <Swiper
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {features.map((feature, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 h-full flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
+                <img
+                  src={feature.icon}
+                  alt={feature.title}
+                  className="mb-4 w-12 h-12"
+                />
+                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{feature.description}</p>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
