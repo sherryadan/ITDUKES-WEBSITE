@@ -7,7 +7,6 @@ import PartnerSection from "./components/PartnerSection";
 import ServiceCard from "./components/ServiceCard";
 import StatsCard from "./components/StatsCard";
 import Testimonials from "./components/Testimonials";
-import Feature from "./components/Feature";
 
 export default function Home() {
   return (
@@ -22,13 +21,13 @@ export default function Home() {
           <ServiceCard />
         </div>
         <div className="mt-6">
-          <GrowthSection />
-        </div>
-        <div className="mt-6">
           <PartnerSection />
         </div>
         <div className="mt-6">
           <StatsCard />
+        </div>
+        <div className="mt-6">
+          <GrowthSection />
         </div>
         <div className="mt-6">
           <Testimonials />

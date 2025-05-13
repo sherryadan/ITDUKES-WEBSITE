@@ -8,19 +8,19 @@ const MainPage = () => {
         
         <div className="flex items-center gap-4">
           <div className="flex items-center">
-            <IoMdContact className="text-xl" />
-            <p className="text-sm ml-2">Suite Sign In</p>
+            <IoMdContact className="text-lg text-orange-500" />
+            <p className="text-xs ml-0.5 font-bold">Suite Sign In</p>
           </div>
           <div className="flex items-center">
-            <FaPhoneSquare className="text-xl ml-2" />
-            <p className="text-sm ml-2">(800) 123-4567</p>
+            <FaPhoneSquare className="text-lg ml-2 text-orange-500" />
+            <p className="text-sm ml-0.5 font-semibold">(800) 123-4567</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-9">
-          <FaFacebookSquare className="text-xl" />
-          <FaInstagramSquare className="text-xl" />
-          <FaLinkedin className="text-xl" />
+        <div className="flex items-center gap-6">
+          <FaFacebookSquare className="text-lg" />
+          <FaInstagramSquare className="text-lg" />
+          <FaLinkedin className="text-lg" />
         </div>
       </div>
     </div>

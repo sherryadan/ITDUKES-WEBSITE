@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const TestimonialCard = ({ name, image, text, bgColor = 'bg-blue-50' }) => {
   return (
-    <div className={`flex items-center ${bgColor} rounded-3xl p-6 shadow-lg`}>
+    <div className={`flex items-center ${bgColor} rounded-4xl p-6 shadow-lg`}>
       <img
         src={image}
         alt={name}

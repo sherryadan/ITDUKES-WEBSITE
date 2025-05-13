@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useState, useEffect } from "react";
 
 const Badge = ({ number, label, position }) => (
   <div
@@ -67,36 +68,62 @@ const HeroSection = ({
   heroImage = { src: "/Microsoft-365-Wheel.png", alt: "Microsoft 365 Wheel" },
   features = defaultFeatures,
 }) => {
+
+    const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setShow(true), 1000); 
+    return () => clearTimeout(timeout);
+  }, []);
   return (
     <section className="bg-[#fff5f2] py-16 px-4 md:px-12 lg:px-20 flex flex-col justify-center items-center gap-10 rounded-4xl">
-      <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 px-4 py-12 max-w-screen-xl">
-        <div className="max-w-xl text-center md:text-left">
-          <p className="text-sm font-semibold text-orange-600 tracking-wide mb-2">
-            {badge}
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            {headline}
-          </h1>
-          <p className="text-gray-700 text-lg mb-6">{description}</p>
-          <p className="text-lg font-semibold text-gray-800 mb-6">
-            Over{" "}
-            <span className="text-orange-600 font-bold">{highlightText}</span>{" "}
-            {highlightLabel}
-          </p>
-          <button
-            className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-black transition"
-            onClick={onButtonClick}
-          >
-            {buttonLabel}
-          </button>
-        </div>
+          <div
+      className={`relative flex flex-col md:flex-row items-center justify-between gap-8 px-4 py-12 max-w-screen-xl transform transition-all duration-2000 ease-out ${
+        show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+      }`}
+    >
+      <div
+        className={`max-w-xl text-center md:text-left transform transition-all duration-2000 delay-200 ease-out ${
+          show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+        }`}
+      >
+        <p className="text-sm font-semibold text-orange-600 tracking-wide mb-2">
+          {badge}
+        </p>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          {headline}
+        </h1>
+        <p className="text-gray-700 text-lg mb-6">{description}</p>
+        <p className="text-lg font-semibold text-gray-800 mb-6">
+          Over{" "}
+          <span className="text-orange-600 font-bold text-4xl">
+            {highlightText}
+          </span>{" "}
+          {highlightLabel}
+        </p>
+        {/* <button
+          className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-black transition cursor-pointer"
+          onClick={onButtonClick}
+        >
+          {buttonLabel}
+        </button> */}
+        <button class="relative inline-block px-6 py-2 h-12 w-55 text-white font-medium bg-gradient-to-r from-orange-500 to-red-500 rounded-4xl overflow-hidden group">
+  <span class="absolute inset-0 w-full h-full bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></span>
+  <span class="relative text-white group-hover:text-white-500 transition-colors duration-300">{buttonLabel}</span>
+</button>
 
-        <div className="relative max-w-md w-full">
-          <img src={heroImage.src} alt={heroImage.alt} className="w-full" />
-          <Badge number="150,000+" label="Users" position="top-2 left-2" />
-          <Badge number="24/7" label="Support" position="bottom-5 right-5" />
-        </div>
       </div>
+
+      <div
+        className={`relative max-w-md w-full transform transition-all duration-2000 delay-400 ease-out ${
+          show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+        }`}
+      >
+        <img src={heroImage.src} alt={heroImage.alt} className="w-full" />
+        <Badge number="150,000+" label="Users" position="top-2 left-2" />
+        <Badge number="24/7" label="Support" position="bottom-5 right-5" />
+      </div>
+    </div>
       <div className="w-full px-4 md:px-8 lg:px-12 max-w-6xl mx-auto mt-10">
         <Swiper
           modules={[Autoplay]}
