@@ -7,7 +7,7 @@ import "swiper/css";
 const PartnerSection = () => {
   return (
     <section
-      className="max-w-6xl mx-auto px-4 py-16"
+      className="max-w-6xl mx-auto px-4 py-16 "
       aria-label="Partner Logos"
     >
       <h2 className="text-sm uppercase text-pink-500 font-semibold mb-2">
