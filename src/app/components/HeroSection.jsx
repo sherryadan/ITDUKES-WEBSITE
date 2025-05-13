@@ -28,13 +28,13 @@ const defaultFeatures = [
   {
     title: "Web Design and Development",
     description:
-      "Our website development services provide custom, responsive, and SEO-friendly designs that align with your goals.",
+      "Our website development services provide custom, responsive, and SEO-friendly designs ",
     icon: "/s2.png",
   },
   {
     title: "Cloud Setup and Management",
     description:
-      "IT Dukes offers seamless cloud setup, migration, and management services for platforms like Google Workspace.",
+      "IT Dukes offers seamless cloud setup, migration, and management services for platforms.",
     icon: "/s3.png",
   },
   {
@@ -46,13 +46,13 @@ const defaultFeatures = [
   {
     title: "Web Design and Development",
     description:
-      "Our website development services provide custom, responsive, and SEO-friendly designs that align with your goals.",
+      "Our website development services provide custom, responsive, and SEO-friendly designs.",
     icon: "/s2.png",
   },
   {
     title: "Cloud Setup and Management",
     description:
-      "IT Dukes offers seamless cloud setup, migration, and management services for platforms like Google Workspace.",
+      "IT Dukes offers seamless cloud setup, migration, and management services for platforms.",
     icon: "/s3.png",
   },
 ];
