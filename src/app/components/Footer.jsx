@@ -97,7 +97,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
-        COPYRIGHT © 2024 IT DUKES LLC. ALL RIGHTS RESERVED
+        COPYRIGHT © 2025 IT DUKES LLC. ALL RIGHTS RESERVED
       </div>
     </footer>
   );

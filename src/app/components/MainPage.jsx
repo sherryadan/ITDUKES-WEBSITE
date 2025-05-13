@@ -3,8 +3,8 @@ import { IoMdContact } from "react-icons/io";
 import { FaPhoneSquare, FaFacebookSquare, FaInstagramSquare , FaLinkedin } from "react-icons/fa";
 const MainPage = () => {
   return (
-    <div className="w-full text-black mt-5 px-5">
-      <div className="flex justify-between items-center">
+    <div className="w-full text-black mt-5 px-5 flex justify-center">
+      <div className="flex justify-between items-center w-full ">
         
         <div className="flex items-center gap-4">
           <div className="flex items-center">

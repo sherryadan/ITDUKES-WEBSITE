@@ -57,12 +57,9 @@ const ServiceCard = () => {
         <p className="text-gray-600 mb-6 leading-relaxed">
           {serviceData.description}
         </p>
-        {/* <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-black transition cursor-pointer">
-          EXPLORE US
-        </button> */}
-        <button class="relative inline-block px-6 py-2 text-white font-medium bg-gradient-to-r from-orange-500 to-red-500 rounded-xl overflow-hidden group">
-          <span class="absolute inset-0 w-full h-full bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></span>
-          <span class="relative text-white group-hover:text-white transition-colors duration-300">
+        <button className="relative inline-block px-6 py-2 text-white font-medium bg-gradient-to-r from-orange-500 to-red-500 rounded-xl overflow-hidden group">
+          <span className="absolute inset-0 w-full h-full bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></span>
+          <span className="relative text-white group-hover:text-white transition-colors duration-300">
             Learn More
           </span>
         </button>

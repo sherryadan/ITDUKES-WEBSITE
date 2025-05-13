@@ -18,7 +18,7 @@ const ListItem = ({ children, href, className }) => (
     <NavigationMenuLink
       href={href}
       className={cn(
-        "block w-full px-4 py-3 text-sm text-center text-gray-800 hover:bg-orange-600 hover:text-white transition-colors duration-200",
+        "block w-full px-4 py-3 text-sm text-gray-700 text-left hover:bg-orange-100 hover:text-orange-600 transition-colors duration-200",
         className
       )}
     >
@@ -29,6 +29,7 @@ const ListItem = ({ children, href, className }) => (
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [openDropdown, setOpenDropdown] = React.useState(null);
 
   const navItems = [
     {
@@ -66,19 +67,19 @@ const Navbar = () => {
         </button>
       </div>
 
-      <nav className="hidden md:flex items-center justify-between px-8 py-4">
+      <nav className="hidden md:flex items-center justify-center px-8 py-4 ">
         <img src="/logo.png" alt="IT Dukes Logo" className="w-40" />
         <NavigationMenu className="flex-grow ml-10">
           <NavigationMenuList className="flex items-center gap-6">
             {navItems.map((item) => (
-              <NavigationMenuItem key={item.title}>
+              <NavigationMenuItem key={item.title} className="relative">
                 <NavigationMenuTrigger className="bg-transparent hover:bg-transparent text-gray-700 hover:text-orange-600 font-semibold">
                   {item.title}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="w-72">
-                  <ul>
+                <NavigationMenuContent className="absolute left-0 mt-2 w-max min-w-[18rem] shadow-lg bg-white border border-gray-200 rounded-md z-50">
+                  <ul className="py-2 px-2 w-80">
                     {item.subItems.map((subItem, index) => (
-                      <ListItem key={index} href="#" >
+                      <ListItem key={index} href="#">
                         {subItem}
                       </ListItem>
                     ))}
@@ -112,7 +113,7 @@ const Navbar = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Button asChild className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full ml-6">
+        <Button asChild className="bg-gradient-to-r from-orange-500 to-red-500 hover:bg-black text-white px-6 py-2 rounded-full ml-6">
           <Link href="#">Get Started</Link>
         </Button>
       </nav>
@@ -120,18 +121,30 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 p-4 space-y-4">
           <ul className="space-y-3">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <li key={item.title}>
-                <span className="block font-bold text-gray-700">{item.title}</span>
-                <ul className="pl-4 space-y-2">
-                  {item.subItems.map((subItem, index) => (
-                    <li key={index}>
-                      <Link href="#" className="block text-sm text-gray-600 hover:text-orange-600">
-                        {subItem}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <button
+                  onClick={() =>
+                    setOpenDropdown(openDropdown === index ? null : index)
+                  }
+                  className="w-full text-left font-bold text-gray-700 hover:text-orange-600"
+                >
+                  {item.title}
+                </button>
+                {openDropdown === index && (
+                  <ul className="pl-4 space-y-2 mt-2">
+                    {item.subItems.map((subItem, subIndex) => (
+                      <li key={subIndex}>
+                        <Link
+                          href="#"
+                          className="block text-sm text-gray-600 hover:text-orange-600"
+                        >
+                          {subItem}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
             <li>

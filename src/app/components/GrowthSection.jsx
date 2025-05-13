@@ -36,7 +36,7 @@ Ready to take the next step? Let’s build your success story together. Reach ou
         <Badge
           number="300+"
           label="Happy Clients"
-          position="bottom-5 right-5"
+          position="bottom-0 right-30"
         />
       </div>
 
@@ -48,9 +48,9 @@ Ready to take the next step? Let’s build your success story together. Reach ou
         <p className="text-gray-600 mb-6 leading-relaxed whitespace-pre-line">
           {description}
         </p>
-        <button class="relative inline-block px-6 py-2 h-12 w-40 text-white font-medium bg-gradient-to-r from-orange-500 to-red-500 rounded-4xl overflow-hidden group">
-          <span class="absolute inset-0 w-full h-full bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></span>
-          <span class="relative text-white group-hover:text-white-500 transition-colors duration-300">
+        <button className="relative inline-block px-6 py-2 h-12 w-40 text-white font-medium bg-gradient-to-r from-orange-500 to-red-500 rounded-4xl overflow-hidden group">
+          <span className="absolute inset-0 w-full h-full bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></span>
+          <span className="relative text-white group-hover:text-white-500 transition-colors duration-300">
             {buttonLabel}
           </span>
         </button>
