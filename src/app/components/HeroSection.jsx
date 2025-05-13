@@ -133,7 +133,9 @@ const HeroSection = ({
           }}
         >
           {features.map((feature, index) => (
+            <div className="bg-white">
             <SwiperSlide key={index}>
+              
               <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 h-full flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
                 <img
                   src={feature.icon}
@@ -145,7 +147,9 @@ const HeroSection = ({
                 </h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
               </div>
+              
             </SwiperSlide>
+            </div>
           ))}
         </Swiper>
       </div>
