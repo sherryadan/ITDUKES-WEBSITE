@@ -113,8 +113,7 @@ const HeroSection = ({
           }`}
         >
           <img src={heroImage.src} alt={heroImage.alt} className="w-full max-w-md mx-auto" />
-          <Badge number="150,000+" label="Users" position="top-8 left-15" />
-          <Badge number="24/7" label="Support" position="bottom-8 right-17" />
+          <Badge number="24/7" label="Support" position="bottom-3 right-21" />
         </div>
       </div>
 
