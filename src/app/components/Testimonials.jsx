@@ -16,7 +16,9 @@ const TestimonialCard = ({ name, image, text, bgColor }) => (
       />
     </div>
     <div className="text-center md:text-left">
-      <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">{name}</h4>
+      <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">
+        {name}
+      </h4>
       <p className="text-slate-800 text-sm sm:text-base leading-relaxed max-w-md">
         {text}
       </p>
@@ -26,7 +28,6 @@ const TestimonialCard = ({ name, image, text, bgColor }) => (
 
 const Testimonials = () => {
   useEffect(() => {
-    // Fixes Swiper breakpoints in React/Next.js
     window.dispatchEvent(new Event("resize"));
   }, []);
 
@@ -34,22 +35,19 @@ const Testimonials = () => {
     {
       name: "John Mitchell",
       image: "/liam.png",
-      text:
-        "IT Dukes transformed the way we collaborate with Google Workspace. Their support team is always available, ensuring we face zero downtime. Highly recommend their services!",
+      text: "IT Dukes transformed the way we collaborate with Google Workspace. Their support team is always available, ensuring we face zero downtime. Highly recommend their services!",
       bgColor: "bg-cyan-100",
     },
     {
       name: "Sofia Karter",
       image: "/sofia.jpg",
-      text:
-        "Our digital marketing campaigns skyrocketed after partnering with IT Dukes. Their SEO and SEM strategies are unparalleled, and the results speak for themselves!",
+      text: "Our digital marketing campaigns skyrocketed after partnering with IT Dukes. Their SEO and SEM strategies are unparalleled, and the results speak for themselves!",
       bgColor: "bg-orange-100",
     },
     {
       name: "Sofia Karter",
       image: "/liam.png",
-      text:
-        "Our digital marketing campaigns skyrocketed after partnering with IT Dukes. Their SEO and SEM strategies are unparalleled, and the results speak for themselves!",
+      text: "Our digital marketing campaigns skyrocketed after partnering with IT Dukes. Their SEO and SEM strategies are unparalleled, and the results speak for themselves!",
       bgColor: "bg-orange-100",
     },
   ];
@@ -65,38 +63,38 @@ const Testimonials = () => {
             What our Happy Client Say.
           </h3>
           <p className="text-slate-700 text-base sm:text-lg max-w-md">
-            We empower businesses with world-class cloud solutions, digital marketing expertise, and custom IT services to drive growth and efficiency.
+            We empower businesses with world-class cloud solutions, digital
+            marketing expertise, and custom IT services to drive growth and
+            efficiency.
           </p>
         </div>
 
-        {/* Swiper */}
         <div className="relative h-[320px] sm:h-[380px] md:h-[420px]">
-         <Swiper
-  modules={[Autoplay]}
-  autoplay={{
-    delay: 3000,
-    disableOnInteraction: false,
-  }}
-  loop={true}
-  slidesPerView={1}
-  direction="horizontal"
-  spaceBetween={20}
-  breakpoints={{
-    1280: {
-      slidesPerView: 2,
-      direction: "vertical",
-      spaceBetween: 20,
-    },
-  }}
-  className="h-full"
->
-  {testimonials.map((t, i) => (
-    <SwiperSlide key={i} className="flex justify-center">
-      <TestimonialCard {...t} />
-    </SwiperSlide>
-  ))}
-</Swiper>
-
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            slidesPerView={1}
+            direction="horizontal"
+            spaceBetween={20}
+            breakpoints={{
+              1280: {
+                slidesPerView: 2,
+                direction: "vertical",
+                spaceBetween: 20,
+              },
+            }}
+            className="h-full"
+          >
+            {testimonials.map((t, i) => (
+              <SwiperSlide key={i} className="flex justify-center">
+                <TestimonialCard {...t} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
