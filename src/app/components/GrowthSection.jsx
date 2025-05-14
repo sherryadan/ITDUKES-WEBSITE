@@ -32,12 +32,7 @@ Ready to take the next step? Let’s build your success story together. Reach ou
           alt={imageAlt}
           className="w-full max-w-md mx-auto md:mx-0"
         />
-        <Badge number="700+" label="Projects Done" position="top-2 left-2" />
-        <Badge
-          number="300+"
-          label="Happy Clients"
-          position="bottom-0 right-30"
-        />
+        <Badge number="70+" label="Employees" position="top-2 left-2" />
       </div>
 
       <div>

@@ -113,12 +113,11 @@ const HeroSection = ({
           }`}
         >
           <img src={heroImage.src} alt={heroImage.alt} className="w-full max-w-md mx-auto" />
-          <Badge number="150,000+" label="Users" position="top-2 left-2" />
-          <Badge number="24/7" label="Support" position="bottom-5 right-5" />
+          <Badge number="150,000+" label="Users" position="top-8 left-23" />
+          <Badge number="24/7" label="Support" position="bottom-8 right-23" />
         </div>
       </div>
 
-      {/* Swiper Feature Section */}
       <div className="w-full max-w-6xl mx-auto mt-12 px-2 sm:px-4 md:px-8 lg:px-12">
         <Swiper
           modules={[Autoplay]}

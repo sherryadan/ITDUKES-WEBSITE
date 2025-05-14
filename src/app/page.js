@@ -17,19 +17,19 @@ export default function Home() {
         <div className="ml-9 mr-9">
           <HeroSection />
         </div>
-        <div className="mt-6">
+        <div >
           <ServiceCard />
         </div>
-        <div className="mt-6 ml-9 mr-9">
+        <div className=" ml-9 mr-9">
           <PartnerSection />
         </div>
-        <div className="mt-6 ml-9 mr-9">
+        <div className="ml-9 mr-9">
           <StatsCard />
         </div>
-        <div className="mt-6 ml-9 mr-9">
+        <div className="ml-9 mr-9">
           <GrowthSection />
         </div>
-        <div className="mt-6 ml-9 mr-9">
+        <div className="ml-9 mr-9">
           <Testimonials />
         </div>
         <div>
