@@ -1,10 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import { useState, useEffect } from "react";
 
 const Badge = ({ number, label, position }) => (
   <div
@@ -27,7 +25,7 @@ const defaultFeatures = [
   {
     title: "Web Design and Development",
     description:
-      "Our website development services provide custom, responsive, and SEO-friendly designs ",
+      "Our website development services provide custom, responsive, and SEO-friendly designs.",
     icon: "/s2.png",
   },
   {
@@ -73,58 +71,59 @@ const HeroSection = ({
     const timeout = setTimeout(() => setShow(true), 1000);
     return () => clearTimeout(timeout);
   }, []);
+
   return (
-    <section className="bg-[#fff5f2] py-16 px-4 md:px-12 ml-18 mr-18 mt-0.5 lg:px-20 flex flex-col justify-center items-center gap-10 rounded-4xl bg-[url('/bg-img.jpg')] bg-cover bg-center bg-no-repeat bg-fixed">
+    <section className="bg-[#fff5f2] bg-[url('/bg-img.jpg')] bg-cover bg-center bg-no-repeat bg-fixed py-16 px-4 sm:px-6 lg:px-20 rounded-4xl">
       <div
-        className={`relative flex flex-col md:flex-row items-center justify-between gap-8 px-4 py-12 max-w-screen-xl transform transition-all duration-2000 ease-out ${
+        className={`relative flex flex-col md:flex-row items-center justify-between gap-10 max-w-7xl mx-auto transition-all duration-1000 ease-out ${
           show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
         }`}
       >
         <div
-          className={`max-w-xl text-center md:text-left transform transition-all duration-2000 delay-200 ease-out ${
+          className={`w-full md:w-1/2 text-center md:text-left transition-all duration-1000 ease-out delay-200 ${
             show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
           }`}
         >
-          <p className="text-sm font-semibold text-orange-600 tracking-wide mb-2">
+          <p className="text-sm font-semibold text-orange-600 mb-2">
             {badge}
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
             {headline}
           </h1>
-          <p className="text-gray-700 text-lg mb-6">{description}</p>
+          <p className="text-gray-700 text-base sm:text-lg mb-6">{description}</p>
           <p className="text-lg font-semibold text-gray-800 mb-6">
             Over{" "}
-            <span className="text-orange-600 font-bold text-4xl">
+            <span className="text-orange-600 font-bold text-3xl sm:text-4xl">
               {highlightText}
             </span>{" "}
             {highlightLabel}
           </p>
-          <button className="relative inline-block px-6 py-2 h-12 w-55 text-white font-medium bg-gradient-to-r from-orange-500 to-red-500 rounded-4xl overflow-hidden group">
-            <span className="absolute inset-0 w-full h-full bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></span>
-            <span className="relative text-white group-hover:text-white-500 transition-colors duration-300">
-              {buttonLabel}
-            </span>
+          <button
+            onClick={onButtonClick}
+            className="relative inline-block px-6 py-3 text-white font-medium bg-gradient-to-r from-orange-500 to-red-500 rounded-full overflow-hidden group"
+          >
+            <span className="absolute inset-0 w-full h-full bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></span>
+            <span className="relative z-10">{buttonLabel}</span>
           </button>
         </div>
 
         <div
-          className={`relative max-w-md w-full transform transition-all duration-2000 delay-400 ease-out ${
+          className={`relative w-full md:w-1/2 transition-all duration-1000 ease-out delay-400 ${
             show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
           }`}
         >
-          <img src={heroImage.src} alt={heroImage.alt} className="w-full" />
+          <img src={heroImage.src} alt={heroImage.alt} className="w-full max-w-md mx-auto" />
           <Badge number="150,000+" label="Users" position="top-2 left-2" />
           <Badge number="24/7" label="Support" position="bottom-5 right-5" />
         </div>
       </div>
-      <div className="w-full px-4 md:px-8 lg:px-12 max-w-6xl mx-auto mt-10">
+
+      {/* Swiper Feature Section */}
+      <div className="w-full max-w-6xl mx-auto mt-12 px-2 sm:px-4 md:px-8 lg:px-12">
         <Swiper
           modules={[Autoplay]}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          spaceBetween={30}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          spaceBetween={20}
           slidesPerView={1}
           breakpoints={{
             640: { slidesPerView: 1 },
@@ -133,9 +132,7 @@ const HeroSection = ({
           }}
         >
           {features.map((feature, index) => (
-            <div className="bg-white">
             <SwiperSlide key={index}>
-              
               <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 h-full flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
                 <img
                   src={feature.icon}
@@ -147,9 +144,7 @@ const HeroSection = ({
                 </h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
               </div>
-              
             </SwiperSlide>
-            </div>
           ))}
         </Swiper>
       </div>

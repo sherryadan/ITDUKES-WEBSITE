@@ -56,7 +56,8 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow">
-      <div className="flex items-center justify-between px-4 py-3 md:hidden">
+      {/* Mobile/Tablet Header */}
+      <div className="flex items-center justify-between px-4 py-3 lg:hidden">
         <img src="/logo.png" alt="IT Dukes Logo" className="w-32" />
         <button
           className="text-black"
@@ -67,7 +68,8 @@ const Navbar = () => {
         </button>
       </div>
 
-      <nav className="hidden md:flex items-center justify-center px-8 py-4 ">
+      {/* Desktop Navigation */}
+      <nav className="hidden lg:flex items-center justify-center px-8 py-4">
         <img src="/logo.png" alt="IT Dukes Logo" className="w-40" />
         <NavigationMenu className="flex-grow ml-10">
           <NavigationMenuList className="flex items-center gap-6">
@@ -118,8 +120,9 @@ const Navbar = () => {
         </Button>
       </nav>
 
+      {/* Mobile/Tablet Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 p-4 space-y-4">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 p-4 space-y-4">
           <ul className="space-y-3">
             {navItems.map((item, index) => (
               <li key={item.title}>
