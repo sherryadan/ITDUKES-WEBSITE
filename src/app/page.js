@@ -14,7 +14,7 @@ export default function Home() {
       <MainPage />
       <div className=" mt-6">
         <Navbar />
-        <div className="ml-9 mr-9">
+        <div className=" mt-6 ml-9 mr-9">
           <HeroSection />
         </div>
         <div >
@@ -32,7 +32,8 @@ export default function Home() {
         <div className="ml-9 mr-9">
           <Testimonials />
         </div>
-        <div>
+        <div className="mt-6">
+          
           <Footer />
         </div>
       </div>
