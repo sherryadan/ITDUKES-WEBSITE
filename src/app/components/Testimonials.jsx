@@ -86,6 +86,11 @@ const Testimonials = () => {
                 direction: "vertical",
                 spaceBetween: 20,
               },
+              768: {
+                slidesPerView: 1,
+                direction: "horizontal",
+                spaceBetween: 20,
+              },
             }}
             className="h-full"
           >
