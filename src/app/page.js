@@ -12,8 +12,6 @@ export default function Home() {
   return (
     <div>
       <MainPage />
-     
-       
         <div className=" mt-2.5 ml-9 mr-9">
           <HeroSection />
         </div>
