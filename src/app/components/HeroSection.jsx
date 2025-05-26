@@ -191,7 +191,7 @@ const HeroWithNavbar = () => {
           </p>
           <button className="relative inline-block px-6 py-3 text-white font-medium bg-gradient-to-r from-orange-500 to-red-500 rounded-full overflow-hidden group">
             <span className="absolute inset-0 w-full h-full bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></span>
-            <span className="relative z-10">GET STARTED TODAY</span>
+            <span className="relative z-10 cursor-pointer">GET STARTED TODAY</span>
           </button>
         </div>
         <div className={`relative w-full md:w-1/2 transition-all duration-1000 ease-out delay-400 ${show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}>

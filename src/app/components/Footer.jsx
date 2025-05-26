@@ -74,7 +74,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white py-10 w-full">
+    <footer className="bg-gray-900 text-white py-7 w-full">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 pl-24 pr-24">
         <div className="md:col-span-1">
           <img src="/logolight.png" alt="IT Dukes" className="mb-4 w-32" />
@@ -95,10 +95,8 @@ const Footer = () => {
         <LinkSection title="Help & Support." links={helpLinks} />
         <ContactSection contacts={contactInfo} socialLinks={socialLinks} />
       </div>
-
-      <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
-        COPYRIGHT © 2025 IT DUKES LLC. ALL RIGHTS RESERVED
-      </div>
+      <div className="mt-5  text-center text-sm text-gray-400">        
+        COPYRIGHT © 2025 IT DUKES LLC. ALL RIGHTS RESERVED</div>
     </footer>
   );
 };
