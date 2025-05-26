@@ -10,11 +10,11 @@ import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
-    <div className="mt-7">
+    <div>
       <MainPage />
-      <div className=" mt-6">
-        <Navbar />
-        <div className=" mt-6 ml-9 mr-9">
+     
+       
+        <div className=" mt-2.5 ml-9 mr-9">
           <HeroSection />
         </div>
         <div >
@@ -37,6 +37,5 @@ export default function Home() {
           <Footer />
         </div>
       </div>
-    </div>
   );
 }

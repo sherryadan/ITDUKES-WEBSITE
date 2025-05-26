@@ -30,6 +30,8 @@ const ListItem = ({ children, href, className }) => (
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [openDropdown, setOpenDropdown] = React.useState(null);
+  const [hideNavbar, setHideNavbar] = React.useState(false);
+  const [lastScrollY, setLastScrollY] = React.useState(0);
 
   const navItems = [
     {
@@ -54,8 +56,34 @@ const Navbar = () => {
     },
   ];
 
+  // Scroll detection logic
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setHideNavbar(true); // Hide on scroll down
+      } else {
+        setHideNavbar(false); // Show on scroll up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <header className="sticky top-0 z-50 bg-white shadow">
+    <header
+      className={cn(
+        "fixed top-0 left-0 w-full z-50 bg-white shadow transition-transform duration-300",
+        hideNavbar ? "translate-y-full" : "translate-y-0"
+      )}
+    >
       {/* Mobile/Tablet Header */}
       <div className="flex items-center justify-between px-4 py-3 lg:hidden">
         <img src="/logo.png" alt="IT Dukes Logo" className="w-32" />

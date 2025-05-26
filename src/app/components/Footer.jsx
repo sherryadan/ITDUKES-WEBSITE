@@ -75,7 +75,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white py-10 w-full">
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 pl-24 pr-24">
         <div className="md:col-span-1">
           <img src="/logolight.png" alt="IT Dukes" className="mb-4 w-32" />
           <h1 className="text-2xl font-bold">
